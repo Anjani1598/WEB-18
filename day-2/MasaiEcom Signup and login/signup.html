@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <form>
+        <input id="username" placeholder="Username" type="text">
+        <input id="email" placeholder="Email" type="text">
+        <input id="pswd" placeholder="Password" type="text">
+        <input type="submit" value="Signup">
+    </form>
+    
+</body>
+</html>
+
+<script>
+
+    var form = document.querySelector("form")
+    
+    form.addEventListener("submit",function(){
+        event.preventDefault()
+
+        var data = {
+            username : form.username.value,
+            email : form.email.value,
+            password : form.pswd.value
+        }
+        if(data.username == ""||data.email==""||data.password=="")
+        {
+            alert("Please Create an account")
+        }
+        else
+        {
+            localStorage.setItem("userdata",JSON.stringify(data))
+            alert("Account Created Successfully")
+            window.location.href = "signin.html"
+
+        }
+       
+    })
+
+    
+
+
+</script>
