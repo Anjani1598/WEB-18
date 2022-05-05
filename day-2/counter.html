@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 50%;
+            margin: auto;
+            border: 1px solid;
+            text-align: center;
+            margin-top: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Counter</h1>
+        <br><br>
+        <button id="inc">Increase</button>
+
+        <button id="dec">Decrease</button>
+    </div>
+   
+</body>
+</html>
+<script>
+    var inc_btn = document.querySelector("#inc")
+    var count = 0||localStorage.getItem("count")
+    document.querySelector("h1").innerText = count
+
+    inc_btn.addEventListener("click",function(){
+        count++
+        document.querySelector("h1").innerText = count
+
+        localStorage.setItem("count",count)
+    })
+
+
+    var dec_btn = document.querySelector("#dec")
+    dec_btn.addEventListener("click",function(){
+        count--
+        document.querySelector("h1").innerText = count
+
+        localStorage.setItem("count",count)
+    })
+</script>
